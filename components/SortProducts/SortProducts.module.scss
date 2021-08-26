@@ -1,0 +1,21 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.form {
+  &__select {
+    padding: 1rem 2rem;
+    font-size: $sm-size-3;
+    border: 2px solid;
+    border-radius: 5px;
+    outline: 0;
+    @include bg-txt-br-color(
+      $color: $venice-blue-color,
+      $br-color: $venice-blue-color
+    );
+    @include text-transform();
+
+    @media (max-width: 500px) {
+      padding: 1rem;
+    }
+  }
+}

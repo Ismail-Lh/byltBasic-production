@@ -1,0 +1,11 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.account {
+  &__user {
+    @include mrb-pdb-brb($mr-b: 3rem, $pd-b: 3rem);
+    .userInfo {
+      margin-bottom: 2rem;
+    }
+  }
+}

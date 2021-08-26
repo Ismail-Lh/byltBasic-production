@@ -1,0 +1,109 @@
+@use './variables' as *;
+
+// set the flex align-items & justify-content
+@mixin flex-ali-jus($align: center, $justify: center, $direction: row) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+// set the flex align-item
+@mixin flex-align($align: center, $gap: 0) {
+  display: flex;
+  align-items: $align;
+}
+
+@mixin flex-justify($justify: center) {
+  display: flex;
+  justify-content: $justify;
+}
+
+// center the items vr & hr
+@mixin grid-center($gap: 0) {
+  display: grid;
+  place-content: center;
+  gap: $gap;
+}
+
+@mixin grid-columns($columns: auto, $rows: auto, $gap: 0) {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+  gap: $gap;
+}
+
+// set the transition
+@mixin transition() {
+  transition: all 0.2s ease-in;
+}
+
+// set the background position & repeat & size
+@mixin bg-image-setup($ps: top) {
+  background-position: $ps;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// set the text transform & the font weight
+@mixin text-transform($transform: uppercase, $weight: bold) {
+  text-transform: $transform;
+  font-weight: $weight;
+}
+
+// set the text color, background color, border color
+@mixin bg-txt-br-color($bg-color: transparent, $color, $br-color: transparent) {
+  color: $color;
+  background-color: $bg-color;
+  border-color: $br-color;
+}
+
+// set the padding, width, text-align
+@mixin pd-wh-txa($pd, $wh, $txa) {
+  padding: $pd;
+  width: $wh;
+  text-align: $txa;
+}
+
+@mixin wh-hei($wh: 100%, $hei: 100%) {
+  width: $wh;
+  height: $hei;
+}
+
+@mixin mrb-pdb-brb(
+  $mr-b: 1rem,
+  $pd-b: 1.5rem,
+  $br-b: 1px solid $light-grey-color
+) {
+  margin-bottom: $mr-b;
+  padding-bottom: $pd-b;
+  border-bottom: $br-b;
+}
+
+@mixin position($ps: absolute, $tp: 0, $rg: 0, $bt: 0, $lf: 0, $z: 'initial') {
+  position: $ps;
+  top: $tp;
+  right: $rg;
+  bottom: $bt;
+  left: $lf;
+  z-index: $z;
+}
+
+@mixin mr-pd($mr: 0, $pd: 0) {
+  margin: $mr;
+  padding: $pd;
+}
+
+@mixin align-pd($align: center, $pd: 0) {
+  align-items: $align;
+  padding: $pd;
+}
+
+@mixin modalStyles($wh: 100%) {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: $wh;
+  background-color: $white-color;
+  padding: 4rem 2rem;
+}

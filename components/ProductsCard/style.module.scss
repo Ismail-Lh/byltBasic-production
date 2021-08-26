@@ -1,0 +1,97 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.card {
+  &__image {
+    background-color: $light-grey-color;
+    position: relative;
+    @include wh-hei($wh: 100%, $hei: 37.5rem);
+
+    &:hover {
+      button {
+        display: block;
+
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+    }
+
+    a {
+      display: contents;
+      height: 100%;
+
+      span {
+        height: 100%;
+        display: contents !important;
+      }
+    }
+
+    img {
+      @include wh-hei();
+      mix-blend-mode: multiply;
+    }
+
+    button {
+      display: none;
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 65%;
+    }
+
+    .sale_badge {
+      @include wh-hei($wh: 4.2rem, $hei: 2rem);
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+  }
+
+  &__info {
+    margin-top: 1rem;
+
+    &_sale,
+    &_name {
+      font-size: $sm-size-3;
+    }
+
+    &_name {
+      margin-bottom: 0.5rem;
+      @include text-transform();
+      @include transition();
+
+      &:hover {
+        color: $venice-blue-color;
+      }
+    }
+
+    &_price {
+      font-size: $sm-size-4;
+
+      .old {
+        text-decoration: line-through;
+        color: $grey-color;
+        margin-left: 5px;
+      }
+    }
+
+    &_colors {
+      margin-top: 0.5rem;
+
+      div {
+        padding: 0;
+
+        p {
+          font-size: $sm-size-4;
+          font-style: italic;
+        }
+
+        div {
+          margin-bottom: 3px;
+        }
+      }
+    }
+  }
+}

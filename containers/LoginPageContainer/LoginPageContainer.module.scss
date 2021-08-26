@@ -1,0 +1,46 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.login {
+  &__container {
+    margin: 5.9rem 0;
+  }
+
+  &__grid {
+    width: 60%;
+    @include mr-pd($mr: 0 auto, $pd: 5rem 0 2rem 0);
+
+    @media (max-width: 768px) {
+      width: 70%;
+    }
+
+    @media (max-width: 425px) {
+      width: 90%;
+    }
+
+    @media (max-width: 375px) {
+      width: 100%;
+      padding-bottom: 0;
+    }
+
+    h1 {
+      font-size: $sm-size-1;
+      line-height: 2.28;
+      @include text-transform();
+      @include mrb-pdb-brb(
+        $mr-b: 3rem,
+        $br-b: 2px solid rgba($grey-color, 0.3)
+      );
+
+      @media (max-width: 500px) {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    button,
+    a {
+      display: block;
+      width: 100%;
+    }
+  }
+}

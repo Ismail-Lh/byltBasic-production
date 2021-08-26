@@ -1,0 +1,46 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.split {
+  &__content {
+    &_icons {
+      margin-top: 2rem;
+    }
+
+    &_icon {
+      &_1,
+      &_2 {
+        @include flex-align();
+      }
+
+      &_1 {
+        &:not(:last-of-type) {
+          margin-bottom: 2rem;
+        }
+
+        svg {
+          margin-right: 2rem;
+          @include wh-hei($wh: 3.5rem, $hei: 3.5rem);
+        }
+
+        span {
+          font-size: $sm-size-2;
+          text-transform: capitalize;
+        }
+      }
+
+      &_2 {
+        font-size: $md-size-3;
+        color: $white-color;
+
+        p {
+          margin: 0 2.5rem;
+        }
+
+        svg {
+          @include wh-hei($wh: 6rem, $hei: auto);
+        }
+      }
+    }
+  }
+}

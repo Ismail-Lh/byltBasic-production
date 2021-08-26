@@ -1,0 +1,28 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.filters {
+  @media (max-width: 768px) {
+    @include flex-align();
+    cursor: pointer;
+
+    svg {
+      @include wh-hei($wh: 1.5rem, $hei: 1.5rem);
+    }
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-size: $sm-size-3;
+  }
+
+  &__title {
+    @include mrb-pdb-brb();
+  }
+
+  &__title {
+    @media (max-width: 768px) {
+      @include mrb-pdb-brb($mr-b: 0, $pd-b: 0, $br-b: 0);
+    }
+  }
+}

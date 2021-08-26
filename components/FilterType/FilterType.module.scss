@@ -1,0 +1,67 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.filter {
+  &__type {
+    @include mrb-pdb-brb();
+
+    &_title,
+    &_value div {
+      @include flex-align();
+      cursor: pointer;
+    }
+
+    &_title {
+      justify-content: space-between;
+      margin-bottom: 1rem;
+
+      svg {
+        @include wh-hei($wh: 2rem, $hei: 2rem);
+      }
+    }
+
+    &_value {
+      padding: 1rem 1.5rem;
+
+      @media (max-width: 768px) {
+        @include flex-align();
+        flex-wrap: wrap;
+        gap: 0.75rem;
+
+        div {
+          border: 2px solid $light-grey-color;
+          padding: 0.5rem 1rem;
+          border-radius: 5px;
+          @include transition();
+
+          &:hover {
+            border: 2px solid $venice-blue-color;
+          }
+        }
+      }
+
+      div {
+        &:not(:last-of-type) {
+          margin-bottom: 1rem;
+        }
+
+        img {
+          @include wh-hei($wh: 4rem, $hei: 4rem);
+          margin-right: 1.5rem;
+        }
+
+        h4 {
+          font-size: $sm-size-4;
+          border-bottom: 1px solid transparent;
+          @include text-transform($transform: capitalize, $weight: 400);
+          @include transition();
+
+          &:hover {
+            color: $venice-blue-color;
+            border-bottom: 1px solid $venice-blue-color;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.card {
+  text-align: center;
+  position: relative;
+
+  @include wh-hei();
+
+  &__content {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    h3 {
+      color: $white-color;
+      font-size: $md-size-1;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+  }
+}

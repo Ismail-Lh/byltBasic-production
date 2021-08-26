@@ -1,0 +1,34 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.productModal {
+  @include position($ps: fixed);
+  @include wh-hei();
+  background-color: rgb($black-color, 0.8);
+
+  &__content {
+    background-color: $white-color;
+    @include wh-hei($wh: 80%);
+    @include mr-pd($mr: 0 auto, $pd: 1rem 1.5rem);
+
+    .closeBtn {
+      @include flex-ali-jus($justify: flex-end);
+      padding-top: 1.5rem;
+
+      svg {
+        position: static;
+      }
+    }
+
+    .product {
+      @include grid-columns($columns: repeat(2, 1fr), $gap: 4rem);
+      height: 90%;
+
+      &__image {
+        img {
+          @include wh-hei();
+        }
+      }
+    }
+  }
+}

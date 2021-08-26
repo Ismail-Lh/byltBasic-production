@@ -1,0 +1,30 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.account {
+  &__grid {
+    padding: 0 6rem;
+
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+
+    h2,
+    p span {
+      @include text-transform();
+    }
+
+    h2 {
+      font-size: $sm-size-2;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      font-size: $sm-size-3;
+
+      &:not(:last-of-type) {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}

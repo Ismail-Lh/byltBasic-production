@@ -1,0 +1,56 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.login {
+  .resetText {
+    margin-bottom: 1.5rem;
+    font-size: $sm-size-3;
+    @include text-transform($transform: capitalize, $weight: 400);
+  }
+
+  &__create a,
+  .btn {
+    font-size: $sm-size-2;
+    text-transform: uppercase;
+  }
+
+  .btn {
+    color: $grey-color;
+    width: max-content;
+    @include mrb-pdb-brb($mr-b: 0, $pd-b: 4px, $br-b: 2px solid transparent);
+    @include transition();
+
+    &:hover {
+      color: $venice-blue-color;
+      border-bottom: 2px solid $venice-blue-color;
+    }
+  }
+
+  &__form {
+    margin-bottom: 1.5rem;
+    div {
+      margin-bottom: 1.3rem;
+    }
+  }
+
+  &__create {
+    @include grid-columns($columns: auto 1fr);
+
+    @media (max-width: 425px) {
+      @include grid-columns($columns: 1fr, $gap: 1rem);
+      justify-content: flex-start;
+    }
+
+    a {
+      color: $venice-blue-color;
+    }
+
+    .btn {
+      justify-self: end;
+
+      @media (max-width: 425px) {
+        justify-self: flex-start;
+      }
+    }
+  }
+}

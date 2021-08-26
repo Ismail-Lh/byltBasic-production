@@ -1,0 +1,34 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.productColors {
+  padding: 1rem 0;
+
+  p {
+    @include text-transform($transform: capitalize);
+    span {
+      font-size: $sm-size-4;
+      color: $grey-color;
+      font-weight: 400;
+    }
+  }
+
+  .colors {
+    @include flex-align();
+    flex-wrap: wrap;
+    margin-top: 1rem;
+
+    .imgContainer {
+      cursor: pointer;
+
+      &:not(:last-of-type) {
+        margin-right: 7px;
+      }
+
+      img {
+        border-radius: 50%;
+        @include wh-hei();
+      }
+    }
+  }
+}

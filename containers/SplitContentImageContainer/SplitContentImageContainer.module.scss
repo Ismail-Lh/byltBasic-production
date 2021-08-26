@@ -1,0 +1,9 @@
+@use '../../styles/mixin' as *;
+
+.imgContainer {
+  @include wh-hei();
+
+  img {
+    @include wh-hei();
+  }
+}

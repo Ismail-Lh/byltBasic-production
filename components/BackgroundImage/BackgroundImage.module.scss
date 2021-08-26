@@ -1,0 +1,16 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.backgroundImage {
+  margin-top: 5.9rem;
+  color: $white-color;
+
+  &__title {
+    @include text-transform();
+    z-index: 10;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

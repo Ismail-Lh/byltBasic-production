@@ -1,0 +1,67 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.register {
+  @include mr-pd($mr: 5.9rem 0 0 0, $pd: 4rem 0 2rem 0);
+
+  @media (max-width: 768px) {
+    padding-top: 2rem;
+  }
+
+  &__container {
+    width: 60%;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      width: 80%;
+    }
+
+    @media (max-width: 600px) {
+      width: 90%;
+    }
+
+    @media (max-width: 375px) {
+      width: 95%;
+    }
+
+    a {
+      font-size: $sm-size-2;
+      text-transform: uppercase;
+      color: $grey-color;
+      @include mrb-pdb-brb($mr-b: 0, $pd-b: 4px, $br-b: 2px solid transparent);
+      @include transition();
+
+      &:hover {
+        color: $venice-blue-color;
+        border-bottom: 2px solid $venice-blue-color;
+      }
+    }
+  }
+
+  &__title {
+    @include text-transform();
+    font-size: $sm-size-1;
+    margin-bottom: 2.5rem;
+
+    @media (max-width: 500px) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__form,
+  &__form div {
+    margin-bottom: 1.5rem;
+  }
+
+  &__form {
+    label {
+      @include text-transform($transform: capitalize, $weight: 300);
+      font-size: $sm-size-2;
+      cursor: pointer;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+}

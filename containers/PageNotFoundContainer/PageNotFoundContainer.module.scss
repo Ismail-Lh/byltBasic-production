@@ -1,0 +1,36 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.pageContainer {
+  margin-top: 5.9rem;
+  @include wh-hei($hei: calc(100vh - 5.9rem));
+  @include grid-center();
+
+  &__content {
+    text-align: center;
+
+    h1 {
+      @include text-transform();
+      font-size: $lg-size;
+
+      @media (max-width: 425px) {
+        font-size: $md-size-3;
+      }
+      @media (max-width: 320px) {
+        font-size: $md-size-4;
+      }
+    }
+
+    p {
+      margin: 1.5rem 0;
+      font-size: $sm-size-1;
+
+      @media (max-width: 425px) {
+        font-size: $sm-size-2;
+      }
+      @media (max-width: 320px) {
+        font-size: $sm-size-3;
+      }
+    }
+  }
+}

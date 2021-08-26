@@ -1,0 +1,13 @@
+@use '../../styles/variables' as *;
+
+.register {
+  &__text {
+    font-size: $sm-size-3;
+    line-height: 2.14em;
+    margin-bottom: 3rem;
+
+    @media (max-width: 500px) {
+      margin-bottom: 1.5rem;
+    }
+  }
+}

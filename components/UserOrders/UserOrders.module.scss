@@ -1,0 +1,77 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.order {
+  margin-top: 2rem;
+  border: 1px solid $light-grey-color;
+
+  &__id {
+    text-align: end;
+
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+
+  &__header {
+    background-color: $light-grey-color;
+    padding: 1rem;
+
+    h3 {
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      font-size: $sm-size-3;
+    }
+
+    .paragraph {
+      font-size: $sm-size-3;
+
+      span {
+        @include text-transform($transform: capitalize, $weight: normal);
+      }
+    }
+
+    &_grid {
+      @include grid-columns($columns: 25% auto 25%, $gap: 2rem);
+      align-items: center;
+      margin-top: 1.5rem;
+
+      @media (max-width: 600px) {
+        margin-top: 0;
+      }
+
+      @media (max-width: 500px) {
+        grid-template-columns: 35% auto;
+      }
+
+      @media (max-width: 425px) {
+        grid-template-columns: 1fr;
+      }
+
+      p {
+        color: $venice-blue-color;
+      }
+    }
+  }
+
+  &__products {
+    @include flex-align();
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2.5rem;
+    padding-top: 1.5rem;
+
+    &_images {
+      width: 15rem;
+
+      img {
+        @include wh-hei();
+      }
+
+      p {
+        color: $venice-blue-color;
+        text-transform: capitalize;
+      }
+    }
+  }
+}

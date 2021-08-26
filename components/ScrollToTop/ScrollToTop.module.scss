@@ -1,0 +1,31 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.scrollToTop {
+  @include wh-hei($wh: 4rem, $hei: 4rem);
+  @include flex-ali-jus();
+  @include transition();
+
+  background-color: $venice-blue-color;
+  border: 4px solid transparent;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 4rem;
+  right: 4rem;
+  z-index: 2000;
+  cursor: pointer;
+
+  svg {
+    color: $white-color;
+    font-size: 2rem;
+    @include transition();
+  }
+
+  &:hover {
+    background-color: $white-color;
+    border: 4px solid $venice-blue-color;
+    svg {
+      color: $venice-blue-color;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.account {
+  &__container {
+    margin-top: 5.9rem;
+    padding: 6rem 0;
+
+    @media (max-width: 425px) {
+      padding: 3rem 0;
+    }
+  }
+}

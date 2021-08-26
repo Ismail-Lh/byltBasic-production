@@ -1,0 +1,58 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.mobileMenu {
+  @include modalStyles($wh: 50%);
+  left: 0;
+
+  @media (max-width: 425px) {
+    width: 100%;
+  }
+  &__icons {
+    margin-bottom: 1.5rem;
+
+    svg {
+      @include wh-hei($wh: 1.9rem, $hei: 1.9rem);
+    }
+  }
+
+  &__form {
+    width: 100%;
+    position: relative;
+
+    input {
+      width: 100%;
+      padding: 1rem 2rem;
+      text-transform: capitalize;
+      font-size: $sm-size-2;
+      border: 2px solid $valhalla-color;
+    }
+
+    svg {
+      position: absolute;
+      right: 1.5rem;
+      top: 1rem;
+      width: 2.5rem;
+    }
+  }
+
+  &__list {
+    margin-top: 4rem;
+
+    li {
+      @include text-transform($weight: $semi-bold);
+      font-size: $sm-size-1;
+      color: $valhalla-color;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid $light-grey-color;
+
+      &:not(:last-of-type) {
+        margin-bottom: 1.5rem;
+      }
+
+      a {
+        display: block;
+      }
+    }
+  }
+}

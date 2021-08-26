@@ -1,0 +1,32 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.footer {
+  &__form {
+    &_text {
+      @include grid-center();
+
+      h1,
+      h2 {
+        text-transform: uppercase;
+      }
+
+      h1 {
+        font-size: $xl-size-2;
+        margin-top: 1rem;
+
+        @media (max-width: 600px) {
+          font-size: $xl-size-3;
+        }
+      }
+
+      h2 {
+        font-size: $md-size-1;
+
+        @media (max-width: 600px) {
+          font-size: $md-size-2;
+        }
+      }
+    }
+  }
+}

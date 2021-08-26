@@ -1,0 +1,42 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.btn {
+  &__white,
+  &__black {
+    font-size: $sm-size-3;
+    border-radius: 3px;
+    border: 3px solid transparent;
+
+    @include pd-wh-txa($pd: 1.3rem 2.6rem, $wh: 20, $txa: center);
+    @include text-transform($weight: $semi-bold);
+    @include transition();
+  }
+  &__white {
+    @include bg-txt-br-color(
+      $bg-color: $white-color,
+      $color: $black-color,
+      $br-color: $white-color
+    );
+
+    &:hover {
+      @include bg-txt-br-color($color: $white-color, $br-color: $white-color);
+    }
+  }
+
+  &__black {
+    @include bg-txt-br-color(
+      $bg-color: $valhalla-color,
+      $color: $white-color,
+      $br-color: $valhalla-color
+    );
+
+    &:hover {
+      @include bg-txt-br-color(
+        $bg-color: $white-color,
+        $color: $valhalla-color,
+        $br-color: $valhalla-color
+      );
+    }
+  }
+}

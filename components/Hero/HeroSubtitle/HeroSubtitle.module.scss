@@ -1,0 +1,9 @@
+@use '../../../styles/variables' as *;
+
+.hero {
+  &__subtitle {
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+    font-size: $sm-size-1;
+  }
+}

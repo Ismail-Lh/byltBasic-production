@@ -1,0 +1,65 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.search {
+  width: 100%;
+  position: relative;
+
+  &__input {
+    @include flex-align();
+    position: relative;
+
+    input {
+      border: none;
+      border-radius: 4px;
+      padding: 1rem 2rem;
+      background-color: $light-grey-color;
+      font-size: $sm-size-3;
+      text-transform: capitalize;
+      width: 100%;
+    }
+
+    button {
+      svg {
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+
+        @include wh-hei($wh: 2rem, $hei: 2rem);
+      }
+    }
+  }
+
+  &__results {
+    @include flex-align($align: flex-start);
+    flex-direction: column;
+    @include wh-hei($hei: auto);
+    background-color: $light-grey-color;
+    overflow-y: scroll;
+    position: absolute;
+    margin-top: 1rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .result {
+      width: 100%;
+      @include transition();
+
+      &:hover {
+        background-color: $grey-color;
+        color: $white-color;
+      }
+
+      a {
+        padding: 1rem 1.5rem;
+        display: block;
+        font-size: $sm-size-3;
+        text-transform: capitalize;
+        margin-right: 0;
+      }
+    }
+  }
+}

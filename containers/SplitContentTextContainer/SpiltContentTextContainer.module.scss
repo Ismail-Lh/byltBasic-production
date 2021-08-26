@@ -1,0 +1,37 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.split {
+  &__content {
+    &_text {
+      @include bg-txt-br-color(
+        $bg-color: $valhalla-color,
+        $color: $white-color
+      );
+      padding: 4rem;
+
+      @media (max-width: 1024px) {
+        @include grid-center();
+      }
+
+      @media (max-width: 425px) {
+        padding: 3rem;
+      }
+
+      a {
+        text-transform: uppercase;
+        font-size: $sm-size-2;
+        color: $light-grey-color;
+        padding-bottom: 0.5rem;
+        width: fit-content;
+        border-bottom: 2px solid transparent;
+        @include transition();
+
+        &:hover {
+          color: $white-color;
+          border-bottom: 2px solid $light-grey-color;
+        }
+      }
+    }
+  }
+}

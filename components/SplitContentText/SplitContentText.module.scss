@@ -1,0 +1,39 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.split__content {
+  &_title {
+    font-size: $lg-size;
+    position: relative;
+    margin-bottom: 4.5rem;
+    @include text-transform($weight: $semi-bold);
+
+    @media (max-width: 375px) {
+      font-size: $md-size-1;
+      margin-bottom: 3.5rem;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -1.5rem;
+      @include wh-hei($wh: 37%, $hei: 5px);
+      background-color: $venice-blue-color;
+    }
+  }
+
+  &_text {
+    font-size: $sm-size-2;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+
+    @media (max-width: 1024px) {
+      width: 80%;
+    }
+
+    @media (max-width: 425px) {
+      width: 100%;
+    }
+  }
+}

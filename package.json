@@ -1,0 +1,35 @@
+{
+  "name": "byltbasics-ecom",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "analyze": "cross-env ANALYZE=true next build"
+  },
+  "dependencies": {
+    "@next/bundle-analyzer": "^11.0.1",
+    "@react-hook/media-query": "^1.1.1",
+    "@stripe/stripe-js": "^1.15.1",
+    "axios": "^0.21.1",
+    "cross-env": "^7.0.3",
+    "date-fns": "^2.23.0",
+    "firebase": "^9.0.0-beta.7",
+    "firebase-admin": "^9.9.0",
+    "framer-motion": "^4.1.17",
+    "micro": "^9.3.4",
+    "next": "^11.0.1",
+    "next-compose-plugins": "^2.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-multi-carousel": "^2.6.3",
+    "react-spinners": "^0.11.0",
+    "stripe": "^8.156.0",
+    "styled-components": "^5.2.3"
+  },
+  "devDependencies": {
+    "sass": "^1.32.8",
+    "uuid": "^8.3.2"
+  }
+}

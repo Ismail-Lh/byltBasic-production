@@ -1,0 +1,13 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.filters {
+  &__clear {
+    @include mrb-pdb-brb();
+
+    button {
+      width: 100%;
+      padding: 1.3rem 1.6rem;
+    }
+  }
+}

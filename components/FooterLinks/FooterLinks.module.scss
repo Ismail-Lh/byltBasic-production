@@ -1,0 +1,24 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.footer {
+  &__list {
+    li {
+      font-size: $sm-size-3;
+      @include text-transform($weight: $semi-bold);
+
+      &:not(:last-of-type) {
+        margin-bottom: 1.5rem;
+      }
+
+      a {
+        color: $black-color;
+        @include transition();
+
+        &:hover {
+          color: $venice-blue-color;
+        }
+      }
+    }
+  }
+}

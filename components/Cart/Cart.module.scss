@@ -1,0 +1,97 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.cart {
+  @include modalStyles($wh: 40%);
+  right: 0;
+  overflow-y: scroll;
+
+  @media (max-width: 768px) {
+    width: 60%;
+  }
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+
+  &__header,
+  &__freeShipping,
+  &__subtotal {
+    border-bottom: 1px solid $light-grey-color;
+  }
+
+  &__header .close,
+  &__subtotal {
+    @include flex-align();
+  }
+
+  &__header h1,
+  &__freeShipping p,
+  &__empty {
+    font-size: $sm-size-2;
+  }
+
+  &__header h1,
+  &__freeShipping p,
+  &__empty,
+  &__subtotal p,
+  &__checkout button,
+  &__checkout a,
+  &__clear button {
+    @include text-transform();
+  }
+
+  &__freeShipping p,
+  &__empty,
+  &__subtotal p {
+    margin: 1.5rem 0;
+  }
+
+  &__subtotal,
+  &__checkout button,
+  &__checkout a,
+  &__clear button {
+    font-size: $md-size-4;
+  }
+
+  &__checkout,
+  &__clear {
+    margin: 1.5rem 0;
+  }
+
+  &__checkout a,
+  &__checkout button,
+  &__clear button {
+    display: block;
+    width: 100%;
+  }
+
+  &__header {
+    .close {
+      justify-content: flex-end;
+
+      svg {
+        width: 2rem;
+      }
+    }
+
+    h1 {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__subtotal {
+    justify-content: space-between;
+  }
+}
+
+@keyframes rightToLeft {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

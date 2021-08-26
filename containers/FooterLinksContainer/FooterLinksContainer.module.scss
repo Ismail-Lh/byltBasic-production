@@ -1,0 +1,69 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.footer {
+  &__links {
+    @include grid-columns($columns: 1.5fr repeat(4, 1fr), $gap: 2.5rem);
+    @include mr-pd($mr: 4rem 0, $pd: 0 2rem);
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 500px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 375px) {
+      @include grid-columns($columns: 1fr, $gap: 2rem);
+      text-align: center;
+    }
+
+    &_1 {
+      img {
+        @media (max-width: 375px) {
+          display: none !important;
+        }
+      }
+
+      div {
+        margin-top: 2rem;
+
+        @media (max-width: 375px) {
+          margin-top: 2rem;
+        }
+
+        a {
+          margin-right: 1rem;
+
+          svg {
+            @include wh-hei($wh: 2rem, $hei: 2rem);
+          }
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    @include grid-columns($columns: repeat(2, 1fr));
+    padding-bottom: 2rem;
+
+    @media (max-width: 500px) {
+      @include grid-columns($columns: 1fr, $gap: 1rem);
+      place-items: center;
+    }
+
+    p {
+      font-size: $sm-size-3;
+    }
+
+    &_2 {
+      text-align: right;
+
+      a {
+        color: $venice-blue-color;
+        border-bottom: 2px solid $light-grey-color;
+      }
+    }
+  }
+}

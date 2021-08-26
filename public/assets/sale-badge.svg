@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42" height="20" viewBox="0 0 42 20">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#D84242" d="M40 0c1.105 0 2 .895 2 2v16c0 1.105-.895 2-2 2H10.264c-1.182 0-2.303-.522-3.063-1.427l-6.12-7.287c-.625-.743-.625-1.829 0-2.572L7.2 1.427C7.961.522 9.082 0 10.264 0H40zM8 8c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2z"/>
+        <text fill="#FFF" font-family="Karla-Bold, Karla" font-size="11" font-weight="normal" letter-spacing="-.5">
+            <tspan x="12.5" y="14">SALE</tspan>
+        </text>
+    </g>
+</svg>

@@ -1,0 +1,25 @@
+@use '../../styles/mixin' as *;
+
+.products {
+  &__category {
+    &_1 {
+      @include grid-columns($columns: repeat(4, 1fr), $gap: 2rem);
+      grid-template-rows: 25rem;
+      margin: 3rem 0;
+
+      @media (max-width: 768px) {
+        grid-template-rows: repeat(2, 25rem);
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 600px) {
+        gap: 1.5rem;
+      }
+
+      @media (max-width: 500px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 25rem);
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@use '../../styles/mixin' as *;
+
+.collections {
+  &__grid {
+    @include grid-columns($columns: 15% auto, $gap: 3rem);
+    margin-top: 4rem;
+
+    @media (max-width: 1024px) {
+      @include grid-columns($columns: 20% auto, $gap: 1.5rem);
+    }
+
+    @media (max-width: 768px) {
+      @include grid-columns($columns: 1fr, $gap: 2rem);
+    }
+
+    @media (max-width: 425px) {
+      margin-top: 2rem;
+    }
+  }
+
+  &__products .products,
+  &__grid .products {
+    @include grid-columns($columns: repeat(3, 1fr), $gap: 3rem);
+
+    @media (max-width: 1024px) {
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      @include grid-columns($columns: repeat(2, 1fr), $gap: 2rem);
+    }
+
+    @media (max-width: 425px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__filters {
+    @include grid-columns($columns: repeat(2, 1fr));
+    align-items: center;
+
+    @media (max-width: 375px) {
+      @include grid-columns($columns: 1fr, $gap: 1rem);
+    }
+
+    .sorts {
+      margin-bottom: 0;
+      text-align: end;
+
+      @media (max-width: 375px) {
+        text-align: start;
+      }
+    }
+  }
+
+  &__products {
+    @include flex-justify();
+    flex-direction: column;
+
+    .sorts {
+      text-align: end;
+      margin-bottom: 2rem;
+    }
+  }
+}

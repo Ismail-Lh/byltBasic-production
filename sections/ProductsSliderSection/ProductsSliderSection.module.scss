@@ -1,0 +1,70 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.products {
+  margin: 3rem 0;
+  position: relative;
+
+  @media (max-width: 768px) {
+    margin: 2rem 0;
+  }
+
+  .title {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: $md-size-2;
+    margin-bottom: 2rem;
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    fill: $black-color;
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+      top: 46%;
+    }
+
+    &:first-of-type {
+      left: 2.5rem;
+    }
+
+    &:last-of-type {
+      right: 2.5rem;
+    }
+  }
+
+  &__slider {
+    ul {
+      gap: 1rem;
+
+      @media (max-width: 1024px) {
+        gap: 2rem;
+      }
+
+      @media (max-width: 464px) {
+        gap: 0;
+      }
+
+      button {
+        top: initial;
+      }
+    }
+
+    button {
+      top: 18rem;
+      z-index: initial;
+    }
+  }
+
+  &__grid {
+    .products {
+      @include grid-columns($columns: repeat(4, 1fr), $gap: 2rem);
+    }
+  }
+}

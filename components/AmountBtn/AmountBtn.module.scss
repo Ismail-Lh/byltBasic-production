@@ -1,0 +1,21 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.amountBtn {
+  width: 25%;
+  @include flex-ali-jus($justify: space-between);
+
+  button,
+  span {
+    font-size: $sm-size-1;
+  }
+
+  button {
+    @include pd-wh-txa($pd: 0.5rem 1rem, $wh: 3rem, $txa: center);
+    @include transition();
+
+    &:hover {
+      @include bg-txt-br-color($bg-color: $black-color, $color: $white-color);
+    }
+  }
+}

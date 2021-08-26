@@ -1,0 +1,52 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.product {
+  &__sizes {
+    @include flex-ali-jus($justify: space-between);
+    padding: 1rem 0;
+    border-bottom: 1px solid $light-grey-color;
+
+    @media (max-width: 425px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .left {
+      font-size: $sm-size-3;
+      @include text-transform($transform: capitalize);
+
+      button {
+        margin-left: 2.1rem;
+        text-transform: capitalize;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    .right {
+      @include flex-ali-jus();
+      flex-wrap: wrap;
+
+      button {
+        padding: 0.5rem 1rem;
+        text-transform: uppercase;
+        font-size: $sm-size-2;
+        cursor: pointer;
+        @include transition();
+
+        &:hover {
+          @include bg-txt-br-color(
+            $bg-color: $black-color,
+            $color: $white-color
+          );
+        }
+
+        &:not(:last-of-type) {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.navbar {
+  @include position($ps: fixed, $z: 100);
+  height: 5.9rem;
+  background-color: $white-color;
+
+  &__items {
+    @include grid-columns($columns: repeat(3, 1fr));
+    align-items: center;
+    justify-content: center;
+    color: $valhalla-color;
+
+    @media (max-width: 980px) {
+      padding: 1rem 0;
+    }
+  }
+}

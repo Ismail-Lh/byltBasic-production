@@ -1,0 +1,40 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixin' as *;
+
+.navbar {
+  &__list {
+    display: flex;
+
+    @media (max-width: 980px) {
+      display: none;
+    }
+  }
+
+  &__links {
+    a {
+      display: inline-block;
+      font-size: $sm-size-3;
+      padding: 2rem 2.5rem;
+      border-bottom: 2px solid transparent;
+      @include text-transform($weight: $semi-bold);
+      @include transition();
+      &:hover {
+        border-bottom: 2px solid $venice-blue-color;
+      }
+
+      @media (max-width: 1024px) {
+        padding: 2rem 1.4rem;
+      }
+    }
+  }
+}
+
+.menu {
+  &__icon {
+    display: none;
+    width: fit-content;
+    @media (max-width: 980px) {
+      display: block;
+    }
+  }
+}

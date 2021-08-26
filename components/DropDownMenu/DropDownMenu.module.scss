@@ -1,0 +1,107 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.dropDownMenu {
+  background-color: $white-color;
+  @include position($tp: 5.9rem, $z: -1);
+  height: 58vh;
+  z-index: 100;
+
+  @media (max-width: 1024px) {
+    height: 70vh;
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  &__grid {
+    @include grid-columns($columns: 1.5fr 3.5fr 2.5fr, $gap: 1rem);
+    height: 100%;
+    padding: 2rem;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1.5fr 4fr 2fr;
+    }
+
+    a {
+      display: inline-block;
+      font-size: $sm-size-2;
+      padding: 0 !important;
+      border-bottom: 0;
+      @include transition();
+
+      &:hover {
+        color: $venice-blue-color;
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &__collections li,
+  &__categories .category__title {
+    margin-bottom: 1.5rem;
+  }
+
+  &__collections li a,
+  &__categories .category__title a {
+    @include text-transform();
+  }
+
+  &__categories {
+    @include grid-columns($columns: repeat(3, 1fr));
+    height: 100%;
+    padding-left: 2rem;
+    border-left: 1px solid $light-grey-color;
+    margin-right: 1rem;
+
+    div {
+      height: max-content;
+    }
+
+    div:first-of-type {
+      grid-row: 1 / 3;
+    }
+
+    div:nth-child(3) {
+      grid-row: 2 / 3;
+    }
+
+    .category {
+      &__type {
+        li {
+          margin-bottom: 1rem;
+
+          a {
+            @include text-transform($transform: capitalize, $weight: 300);
+          }
+        }
+      }
+    }
+  }
+
+  &__image {
+    a {
+      position: relative;
+
+      div {
+        position: absolute;
+        bottom: 1rem;
+        left: 1.5rem;
+        color: $white-color;
+
+        .subtitle {
+          font-size: $sm-size-4;
+        }
+
+        .title {
+          font-size: $md-size-2;
+        }
+      }
+
+      img {
+        @include wh-hei();
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@use '../../styles/variables' as *;
+
+.backgroundImage {
+  div {
+    height: 27.5rem;
+
+    h1 {
+      font-size: $xl-size-1;
+    }
+  }
+}

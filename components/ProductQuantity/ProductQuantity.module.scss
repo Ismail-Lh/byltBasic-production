@@ -1,0 +1,42 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.product {
+  &__qty,
+  &__qty div {
+    @include flex-ali-jus($justify: space-between);
+  }
+
+  &__qty {
+    padding: 1rem 0;
+    border-bottom: 1px solid $light-grey-color;
+
+    p {
+      font-size: $sm-size-3;
+      @include text-transform($transform: capitalize);
+    }
+
+    div {
+      width: 25%;
+
+      button,
+      span {
+        font-size: $sm-size-1;
+      }
+
+      button {
+        padding: 0.5rem 1rem;
+        width: 3rem;
+        text-align: center;
+        @include transition();
+
+        &:hover {
+          @include bg-txt-br-color(
+            $bg-color: $black-color,
+            $color: $white-color
+          );
+        }
+      }
+    }
+  }
+}

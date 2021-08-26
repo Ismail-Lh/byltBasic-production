@@ -1,0 +1,8 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.productSale {
+  color: $valencia-color;
+  margin-bottom: 0.5rem;
+  @include text-transform();
+}

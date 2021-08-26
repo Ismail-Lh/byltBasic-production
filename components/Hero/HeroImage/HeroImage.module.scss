@@ -1,0 +1,24 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixin' as *;
+
+.hero {
+  &__container {
+    width: 100vw;
+    height: calc(100vh - 5.9rem);
+    position: relative;
+  }
+
+  &__content {
+    @include flex-ali-jus($direction: column);
+    @include wh-hei();
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+
+    @media (max-width: 700px) {
+      @include flex-ali-jus($justify: flex-end, $direction: column);
+      padding-bottom: 4rem;
+    }
+  }
+}

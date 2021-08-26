@@ -1,0 +1,17 @@
+@use '../../styles/mixin' as *;
+
+.singleProduct {
+  margin-top: 7.9rem;
+
+  @media (max-width: 768px) {
+    margin-top: 6.9rem;
+  }
+
+  &_container {
+    @include grid-columns($columns: 60% 37%, $gap: 3.5rem);
+
+    @media (max-width: 768px) {
+      @include grid-columns($columns: 1fr, $gap: 2rem);
+    }
+  }
+}

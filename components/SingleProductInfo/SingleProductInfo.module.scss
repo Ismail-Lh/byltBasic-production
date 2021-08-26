@@ -1,0 +1,105 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.product {
+  &__title {
+    margin-bottom: 2rem;
+    font-size: $md-size-2;
+    max-width: 22ch;
+    line-height: 1;
+    letter-spacing: 0.0334375em;
+    @include text-transform();
+
+    @media (max-width: 700px) {
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__price,
+  &__sale {
+    font-size: $sm-size-2;
+  }
+
+  &__colors {
+    border-top: 1px solid $light-grey-color;
+    border-bottom: 1px solid $light-grey-color;
+
+    div {
+      p {
+        font-size: $sm-size-3;
+      }
+
+      div {
+        row-gap: 1rem;
+
+        div {
+          @include wh-hei($wh: 2.8rem, $hei: 2.8rem);
+        }
+      }
+    }
+  }
+
+  &__payment {
+    margin-top: 5px;
+    font-size: $sm-size-4;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  &__description {
+    font-size: $sm-size-3;
+    line-height: 1.57em;
+    letter-spacing: 0.05em;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+
+    @media (max-width: 700px) {
+      margin: 1rem 0;
+    }
+  }
+
+  &__addToCart {
+    padding: 1rem 0;
+    border-bottom: 1px solid $light-grey-color;
+
+    p {
+      font-size: $sm-size-3;
+      @include text-transform($transform: capitalize);
+    }
+
+    button {
+      width: 100%;
+      text-align: center;
+      font-size: $sm-size-3;
+      padding: 1.5rem;
+      border: 2px solid;
+      border-radius: 5px;
+      @include text-transform();
+      @include bg-txt-br-color(
+        $bg-color: $venice-blue-color,
+        $color: $white-color
+      );
+      @include transition();
+
+      &:hover {
+        @include bg-txt-br-color(
+          $bg-color: $white-color,
+          $color: $venice-blue-color,
+          $br-color: $venice-blue-color
+        );
+      }
+    }
+  }
+}
+
+.btn_more {
+  text-transform: capitalize;
+  text-decoration: underline;
+  cursor: pointer;
+}

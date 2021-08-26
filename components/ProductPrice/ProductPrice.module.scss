@@ -1,0 +1,21 @@
+@use '../../styles/variables' as *;
+
+.product {
+  &__price {
+    .new {
+      font-weight: bold;
+      color: $valencia-color;
+    }
+
+    .old {
+      text-decoration: line-through;
+      margin-left: 5px;
+      opacity: 0.8;
+    }
+
+    p {
+      color: $valencia-color;
+      text-transform: uppercase;
+    }
+  }
+}

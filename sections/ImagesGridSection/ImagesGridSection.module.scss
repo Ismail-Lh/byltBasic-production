@@ -1,0 +1,70 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
+.image {
+  &__grid {
+    @include grid-columns(
+      $columns: repeat(2, 1fr),
+      $rows: repeat(2, 52rem),
+      $gap: 2rem
+    );
+    padding: 2rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 57rem);
+    }
+
+    @media (max-width: 600px) {
+      grid-template-rows: repeat(4, 45rem);
+    }
+
+    @media (max-width: 425px) {
+      grid-template-rows: repeat(4, 35rem);
+    }
+
+    @media (max-width: 375px) {
+      grid-template-rows: repeat(4, 30rem);
+    }
+
+    &_items {
+      div:first-of-type {
+        height: 100%;
+
+        div {
+          align-items: flex-start;
+          justify-content: flex-end;
+          padding-left: 3rem;
+          padding-bottom: 2rem;
+
+          @media (max-width: 600px) {
+            align-items: center;
+            text-align: center;
+            padding-left: 0;
+          }
+
+          h1 {
+            font-size: $md-size-1;
+            font-weight: $semi-bold;
+            width: auto;
+
+            @media (max-width: 375px) {
+              font-size: $md-size-2;
+            }
+          }
+
+          h1,
+          h2 {
+            @media (max-width: 320px) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    div:first-of-type {
+      grid-row: 1 / 3;
+    }
+  }
+}
