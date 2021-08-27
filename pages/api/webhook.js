@@ -1,7 +1,5 @@
 import { buffer } from 'micro';
 import * as admin from 'firebase-admin';
-// import { db } from '../../lib/firebase.prod';
-// import { collection, doc, setDoc } from '@firebase/firestore/dist/lite';
 
 const serviceAccount = require('../../firebase-adminsdk.json');
 
@@ -18,27 +16,6 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const endpointSecret = process.env.STRIPE_SIGNING_SECRET;
 
 const fulFillOrders = async session => {
-  // const usersRef = collection(db, 'users');
-  // const emailRef = doc(usersRef, session.metadata.email);
-  // const ordersRef = collection(emailRef, 'orders');
-  // const idRef = doc(ordersRef, session.id);
-
-  // try {
-  //   return setDoc(idRef, {
-  //     amount: session.amount_total,
-  //     amount_shipping: session.total_details.amount_shipping,
-  //     images: JSON.parse(session.metadata.images),
-  //     stripe_info: JSON.parse(session.metadata.item),
-  //     timestamp: admin.firestore.FieldValue.serverTimestamp(),
-  //   }).then(() =>
-  //     console.log(
-  //       `SUCCESS: Orders ${session.id} had been added to firestore DB.`
-  //     )
-  //   );
-  // } catch (error) {
-  //   console.log(error.message);
-  // }
-
   return app
     .firestore()
     .collection('users')

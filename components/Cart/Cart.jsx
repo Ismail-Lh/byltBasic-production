@@ -47,46 +47,55 @@ const Cart = () => {
       animate='animate'
       exit='initial'
       className={classes.cart}>
-      <div className={classes.cart__header}>
-        <div className={classes.close}>
-          <button onClick={closeCart}>
-            <CloseIcon />
-          </button>
+      <div
+        className={classes.cart__overlay}
+        onClick={e => {
+          e.stopPropagation();
+          closeCart();
+        }}
+      />
+      <div className={classes.cart__container}>
+        <div className={classes.cart__header}>
+          <div className={classes.close}>
+            <button onClick={closeCart}>
+              <CloseIcon />
+            </button>
+          </div>
+
+          <h1>your cart</h1>
         </div>
 
-        <h1>your cart</h1>
+        <div className={classes.cart__freeShipping}>
+          <p>free shipping on orders of $100+</p>
+        </div>
+
+        {products?.length === 0 ? (
+          <p className={classes.cart__empty}>Your cart is currently empty.</p>
+        ) : (
+          <>
+            <CartItems />
+
+            <div className={classes.cart__subtotal}>
+              <p className={classes.cart__subtotal_title}>subtotal:</p>
+              <p className={classes.cart__subtotal_price}>{subTotal} USD</p>
+            </div>
+
+            <div className={classes.cart__clear}>
+              <Button handelClick={clearCart}>Clear cart</Button>
+            </div>
+
+            <div className={classes.cart__checkout}>
+              {!user ? (
+                <Button route='/account/login'>sign in to checkout</Button>
+              ) : (
+                <Button role='link' handelClick={createCheckoutSession}>
+                  proceed to checkout
+                </Button>
+              )}
+            </div>
+          </>
+        )}
       </div>
-
-      <div className={classes.cart__freeShipping}>
-        <p>free shipping on orders of $100+</p>
-      </div>
-
-      {products?.length === 0 ? (
-        <p className={classes.cart__empty}>Your cart is currently empty.</p>
-      ) : (
-        <>
-          <CartItems />
-
-          <div className={classes.cart__subtotal}>
-            <p className={classes.cart__subtotal_title}>subtotal:</p>
-            <p className={classes.cart__subtotal_price}>{subTotal} USD</p>
-          </div>
-
-          <div className={classes.cart__clear}>
-            <Button handelClick={clearCart}>Clear cart</Button>
-          </div>
-
-          <div className={classes.cart__checkout}>
-            {!user ? (
-              <Button route='/account/login'>sign in to checkout</Button>
-            ) : (
-              <Button role='link' handelClick={createCheckoutSession}>
-                proceed to checkout
-              </Button>
-            )}
-          </div>
-        </>
-      )}
     </motion.div>
   );
 };

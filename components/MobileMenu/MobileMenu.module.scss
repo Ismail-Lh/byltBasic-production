@@ -2,17 +2,25 @@
 @use '../../styles/mixin' as *;
 
 .mobileMenu {
-  @include modalStyles($wh: 50%);
-  left: 0;
-
-  @media (max-width: 425px) {
-    width: 100%;
+  @include positionFixed();
+  &__overlay {
+    background-color: $black-overlay;
+    @include wh-hei();
   }
-  &__icons {
-    margin-bottom: 1.5rem;
 
-    svg {
-      @include wh-hei($wh: 1.9rem, $hei: 1.9rem);
+  &__container {
+    @include modalStyles($wh: 50%);
+    left: 0;
+
+    @media (max-width: 425px) {
+      width: 100%;
+    }
+    &__icons {
+      margin-bottom: 1.5rem;
+
+      svg {
+        @include wh-hei($wh: 1.9rem, $hei: 1.9rem);
+      }
     }
   }
 

@@ -2,16 +2,25 @@
 @use '../../styles/mixin' as *;
 
 .cart {
-  @include modalStyles($wh: 40%);
-  right: 0;
-  overflow-y: scroll;
+  @include positionFixed();
 
-  @media (max-width: 768px) {
-    width: 60%;
+  &__overlay {
+    background-color: $black-overlay;
+    @include wh-hei();
   }
 
-  @media (max-width: 500px) {
-    width: 100%;
+  &__container {
+    @include modalStyles($wh: 40%);
+    right: 0;
+    overflow-y: scroll;
+
+    @media (max-width: 768px) {
+      width: 60%;
+    }
+
+    @media (max-width: 500px) {
+      width: 100%;
+    }
   }
 
   &__header,

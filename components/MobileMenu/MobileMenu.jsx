@@ -20,32 +20,42 @@ const MobileMenu = () => {
       animate='animate'
       exit='initial'
       className={classes.mobileMenu}>
-      <div className={classes.mobileMenu__icons}>
-        <button type='button' onClick={closeSidebar}>
-          <CloseIcon />
-        </button>
-      </div>
+      <div
+        className={classes.mobileMenu__overlay}
+        onClick={e => {
+          e.stopPropagation();
+          closeSidebar();
+        }}
+      />
 
-      <form className={classes.mobileMenu__form}>
-        <input type='text' placeholder='search' />
-        <SearchIcon />
-      </form>
+      <div className={classes.mobileMenu__container}>
+        <div className={classes.mobileMenu__icons}>
+          <button type='button' onClick={closeSidebar}>
+            <CloseIcon />
+          </button>
+        </div>
 
-      <ul className={classes.mobileMenu__list}>
-        {NavbarLinks.map(({ id, link, route }) => (
-          <li
-            key={id}
-            onClick={() => {
-              updateCollection(link);
-              closeSidebar();
-            }}>
-            <Link href={`/collections/${route}`}>{link}</Link>
+        <form className={classes.mobileMenu__form}>
+          <input type='text' placeholder='search' />
+          <SearchIcon />
+        </form>
+
+        <ul className={classes.mobileMenu__list}>
+          {NavbarLinks.map(({ id, link, route }) => (
+            <li
+              key={id}
+              onClick={() => {
+                updateCollection(link);
+                closeSidebar();
+              }}>
+              <Link href={`/collections/${route}`}>{link}</Link>
+            </li>
+          ))}
+          <li onClick={closeSidebar}>
+            <Link href='/account/login'>login</Link>
           </li>
-        ))}
-        <li onClick={closeSidebar}>
-          <Link href='/account/login'>login</Link>
-        </li>
-      </ul>
+        </ul>
+      </div>
     </motion.div>
   );
 };

@@ -31,9 +31,6 @@ const NavBar = () => {
 
       <AnimatePresence initial={false}>
         {isSidebarOpen && <DynamicMobileMenu />}
-      </AnimatePresence>
-
-      <AnimatePresence initial={false}>
         {isCartOpen && <DynamicCart />}
       </AnimatePresence>
     </nav>
