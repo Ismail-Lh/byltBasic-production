@@ -1,3 +1,4 @@
+@use '../../styles/variables' as *;
 @use '../../styles/mixin' as *;
 
 .singleProduct {
@@ -7,7 +8,44 @@
     margin-top: 6.9rem;
   }
 
-  &_container {
+  &__links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-size: $sm-size-2;
+
+    @media (max-width: 425px) {
+      display: none;
+    }
+
+    a {
+      @include transition();
+      margin-right: 5px;
+      &:hover {
+        color: $venice-blue-color;
+      }
+    }
+
+    p {
+      font-weight: lighter;
+    }
+  }
+
+  &__btns {
+    display: none;
+    margin-bottom: 1rem;
+
+    a {
+      width: 100%;
+    }
+
+    @media (max-width: 425px) {
+      @include grid-columns($columns: repeat(2, 1fr), $gap: 0.75rem);
+    }
+  }
+
+  &__container {
     @include grid-columns($columns: 60% 37%, $gap: 3.5rem);
 
     @media (max-width: 768px) {
