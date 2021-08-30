@@ -33,13 +33,15 @@ const SingleProductContainer = () => {
           <MyLink route={`/collections/${genderCollection}`}>
             {genderCollection} /
           </MyLink>
-          <MyLink route={`/collections/${collections}`}>{collections} /</MyLink>
+          <MyLink route={`/collections/${gender}/${collections}`}>
+            {collections} /
+          </MyLink>
           <p>{name}</p>
         </div>
 
         <div className={classes.singleProduct__btns}>
           <Button route='/'>Home page</Button>
-          <Button route={`/collections/${gender}/${genderCollection}`}>
+          <Button route={`/collections/${genderCollection}`}>
             {genderCollection}
           </Button>
         </div>
