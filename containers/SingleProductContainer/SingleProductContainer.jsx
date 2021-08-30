@@ -39,7 +39,7 @@ const SingleProductContainer = () => {
 
         <div className={classes.singleProduct__btns}>
           <Button route='/'>Home page</Button>
-          <Button route={`/collections/${genderCollection}`}>
+          <Button route={`/collections/${gender}/${genderCollection}`}>
             {genderCollection}
           </Button>
         </div>
