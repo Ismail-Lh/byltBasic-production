@@ -17,9 +17,6 @@ const DynamicFooterSection = dynamic(() =>
   import('../sections/FooterSection/FooterSection')
 );
 
-// import { firebase } from '../lib/firebase.prod';
-// import { addDataBase } from '../productsData';
-
 function MyApp({ Component, pageProps, router }) {
   return (
     <AuthProvider>
@@ -41,6 +38,5 @@ function MyApp({ Component, pageProps, router }) {
     </AuthProvider>
   );
 }
-// <button onClick={() => addDataBase(firebase)}>add</button>
 
 export default MyApp;

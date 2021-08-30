@@ -23,13 +23,12 @@ const FiltersReducer = (state, action) => {
 
   if (action.type === GET_PRODUCTS_BY_COLLECTION) {
     const { men_products, women_products } = action.payload;
-    const { collection } = state;
-    const route = collection?.route?.toLowerCase();
-
-    let products = [];
+    const { route } = state.collection;
 
     const allProducts = [...men_products, ...women_products];
     const salesProducts = allProducts.filter(product => product.discountPer);
+
+    let products = [];
 
     // Get products by their collection
     const getProductsByCollection = (collection, prd) =>
